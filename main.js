@@ -1,7 +1,12 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import "./style.css";
-let weatherApp = (function () {
+import { searchIcon } from "./module/icon";
+(function () {
   const weatherForm = document.querySelector(".location-form");
   const locationInput = document.getElementById("weather-location");
+  const submitButton = document.querySelector("button");
+  submitButton.innerHTML = searchIcon;
+
   weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
     fetchWeather(locationInput.value).then((data) => {
