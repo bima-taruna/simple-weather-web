@@ -23,9 +23,22 @@ body {
   flex-direction: column;
 }
 
+.location-form {
+  display: flex;
+  gap: 0.625rem;
+}
+
 input {
   padding: 0.5rem 1.75rem;
   border: none;
   border-radius: 1.5rem;
+  font-size: 1.5rem;
+}
+
+button {
+  border-radius: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+
   font-size: 1.5rem;
 }
