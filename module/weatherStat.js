@@ -19,7 +19,7 @@ function weatherStatComp() {
     humidity,
     windSpeed,
   }) {
-    iconPanel.src = `./public/icon/${icon}.png`;
+    iconPanel.src = `./icon/${icon}.png`;
     descriptionPanel.textContent = `${description}`;
     statPanel.innerHTML = `
         <div class="temp-stat">${temp}°C</div>
