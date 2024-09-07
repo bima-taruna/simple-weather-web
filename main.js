@@ -1,6 +1,6 @@
 import "./style.css";
 import { searchIcon } from "./module/icon";
-import weatherStatComp from "./weatherStat";
+import weatherStatComp from "./module/weatherStat";
 (function () {
   const weatherForm = document.querySelector(".location-form");
   const locationInput = document.getElementById("weather-location");
@@ -11,8 +11,8 @@ import weatherStatComp from "./weatherStat";
   weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
     fetchWeather(locationInput.value).then((data) => {
+      console.log(data);
       const weatherData = mapWeatherData(data);
-      console.log(weatherData);
       renderStatPanel(weatherData);
     });
   });
@@ -21,7 +21,9 @@ import weatherStatComp from "./weatherStat";
     let loading = true;
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}${location}/next3days?key=${
+        `${
+          import.meta.env.VITE_API_URL
+        }${location}/next3days?unitGroup=metric&key=${
           import.meta.env.VITE_API_KEY
         }`,
         {
