@@ -6,10 +6,15 @@ import weatherStatComp from "./module/weatherStat";
   const locationInput = document.getElementById("weather-location");
   const submitButton = document.querySelector("button");
   const weatherStatContainer = document.querySelector(".weather-stat");
+  const loading = document.createElement("div");
+  loading.textContent = "loading...";
+  loading.style.display = "none";
+  weatherStatContainer.appendChild(loading);
   submitButton.innerHTML = searchIcon;
 
   weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    weatherStatContainer.classList.add("show");
     fetchWeather(locationInput.value).then((data) => {
       console.log(data);
       const weatherData = mapWeatherData(data);
@@ -18,7 +23,7 @@ import weatherStatComp from "./module/weatherStat";
   });
 
   async function fetchWeather(location) {
-    let loading = true;
+    loading.style.display = "block";
     try {
       const response = await fetch(
         `${
@@ -31,14 +36,14 @@ import weatherStatComp from "./module/weatherStat";
         }
       );
       if (response.ok) {
-        loading = false;
+        loading.style.display = "none";
         return await response.json();
       } else {
-        loading = false;
+        loading.style.display = "none";
         return "Promise resolved with HTTP status failed";
       }
     } catch (error) {
-      loading = false;
+      loading.style.display = "none";
       return error;
     }
   }
