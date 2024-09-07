@@ -2,7 +2,7 @@
   "name": "simple-weather-web",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://bima-taruna.github.io/simple-weather-app/",
+  "homepage": "https://bima-taruna.github.io/simple-weather-web/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
