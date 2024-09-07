@@ -48,7 +48,7 @@ import weatherStatComp from "./module/weatherStat";
   }
 
   /* The `mapWeatherData` function is taking a `data` object as input, which likely contains weather
-  information fetched from an API. then put it in map, Inside the function: */
+  information fetched from an API. then put it in hashtable, Inside the function: */
   function mapWeatherData(data) {
     const dataTable = {
       address: data.resolvedAddress,
