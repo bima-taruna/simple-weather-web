@@ -16,7 +16,6 @@ import weatherStatComp from "./module/weatherStat";
     e.preventDefault();
     weatherStatContainer.classList.add("show");
     fetchWeather(locationInput.value).then((data) => {
-      console.log(data);
       const weatherData = mapWeatherData(data);
       renderStatPanel(weatherData);
     });
